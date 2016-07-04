@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn server for SITENAME
+User=rarvolt
+
+[Service]
+Restart=on-failure
+WorkingDirectory=/home/rarvolt/sites/SITANAME/source
+ExecStart=/home/rarvolt/sites/SITENAME/virtualenv/bin/gunicorn --bind unix:/tmp/SITENAME.socket superlists.wsgi: application
+
+[Install]
+WantedBy=network-online.target
