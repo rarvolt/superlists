@@ -4,7 +4,7 @@ User=rarvolt
 
 [Service]
 Restart=on-failure
-WorkingDirectory=/home/rarvolt/sites/SITANAME/source
+WorkingDirectory=/home/rarvolt/sites/SITENAME/source
 ExecStart=/home/rarvolt/sites/SITENAME/virtualenv/bin/gunicorn --bind unix:/tmp/SITENAME.socket superlists.wsgi: application
 
 [Install]
