@@ -1,9 +1,9 @@
-from django.test import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-class NewVisitorTest(LiveServerTestCase):
+class NewVisitorTest(StaticLiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Chrome()
         self.browser.implicitly_wait(3)
@@ -95,7 +95,7 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertAlmostEqual(
             input_box.location['x'] + input_box.size['width'] / 2,
             512,
-            delta=10
+            delta=5
         )
 
         # She starts a new list and sees the input is nicely
@@ -105,5 +105,5 @@ class NewVisitorTest(LiveServerTestCase):
         self.assertAlmostEqual(
             input_box.location['x'] + input_box.size['width'] / 2,
             512,
-            delta=10
+            delta=5
         )
